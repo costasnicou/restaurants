@@ -1,0 +1,145 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+p {
+    font-weight: 300;
+}
+
+/* main {
+    padding: 50px 0;
+} */
+
+section {
+    padding: 80px;
+}
+
+/* .top-bar {
+    background-color: tomato;
+    height: 10px;
+} */
+
+nav {
+    height: 40px;
+    padding-top: 20px;
+    text-align: center;
+    /* border-top: 10px solid tomato;
+    border-bottom: 10px solid tomato; */
+    background-color: rgb(243, 241, 241);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100
+}
+
+nav a {
+    text-decoration: none;
+    color: tomato;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.cover-img {
+    background: linear-gradient(to bottom, rgba(30, 30, 30, 0.542), rgba(59, 58, 58, 0.87)),
+        url(../imgs/cover.jpg);
+    /* background-image: url(../imgs/cover.jpg); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+.cover-content {
+    position: relative;
+    top: 170px;
+}
+
+.cover-title {
+    font-size: 90px;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    line-height: 1.6em;
+    /* top: 225px; */
+}
+
+.cover-subtitle {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    /* position: relative;
+    top: 225px; */
+}
+
+.about-us-section p {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+hr {
+    border-top: 0.2px solid rgb(249, 228, 224);
+    width: 35%;
+    margin: 40px auto 0 auto;
+
+}
+
+.menu-section {
+    background-color: rgb(253, 253, 253);
+}
+
+.items-container {
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.section-title {
+    text-align: center;
+    color: tomato;
+    /* padding: 20px; */
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.item {
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.item-title {
+    color: tomato;
+    font-weight: 300;
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: tomato;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    width: 100px;
+    margin: 20px auto 0 auto;
+}
+
+.btn:hover {
+    background-color: rgb(177, 67, 47);
+}
+
+
+footer {
+    height: 200px;
+    background-color: rgb(51, 51, 51);
+}

@@ -1,0 +1,90 @@
+/* .details-container {
+    width: 70%;
+    margin: 70px auto 0 auto;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.details-item-title,
+.item-price {
+    color: tomato;
+}
+
+p {
+    font-size: 20px;
+}
+
+.details-container p {
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.item-price {
+    font-size: 40px;
+
+}
+
+.details-item-img {
+    margin-top: 20px;
+}
+
+.btn.back-to-menu {
+    margin-top: 40px;
+} */
+.restaurant-cover {
+    background-image: url(../imgs/restaurant-bg.jpg);
+    background: linear-gradient(to bottom, rgba(30, 30, 30, 0.542), rgba(59, 58, 58, 0.87)),
+        url(../imgs/restaurant-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    text-align: center;
+
+}
+
+.restaurant-cover h1 {
+    color: white;
+    position: relative;
+    top: 190px;
+    font-size: 50px;
+}
+
+.menu-content {
+    margin-top: 20px !important;
+    /* width: 70%; */
+    margin: 100px auto 0 auto;
+    text-align: center;
+
+}
+
+.categories-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu-item {
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    margin: 20px;
+
+}
+
+.menu-category-title {
+    text-align: left;
+}
+
+.menu-item img {
+    width: 250px;
+    height: 300px;
+}

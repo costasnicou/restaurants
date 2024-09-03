@@ -1,0 +1,31 @@
+{% extends "food/layout.html" %}
+{% block cover%}
+<div class="restaurant-cover">
+    <h1 class="menu-title">{{restaurant.restaurant_name}} Menu</h1>
+</div>
+{%endblock%}
+
+{% block main %}
+
+<section class="menu-content">
+
+
+    <h2>Menu Categories</h2>
+
+    <!-- <h1>{{restaurant.restaurant_name}}</h1> -->
+
+    <div class="categories-flex">
+        {% for menu_category in menu_categories%}
+        <div class="menu-item">
+            <h3 class="menu-category-title">{{menu_category.category_name}}</h3>
+            <img src="{{menu_category.category_image}}" alt="">
+            <a href="">View Menu</a>
+
+        </div>
+        {%endfor%}
+    </div>
+
+
+    <a href="{% url 'index'%}">Back</a>
+</section>
+{% endblock %}

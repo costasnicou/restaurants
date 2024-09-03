@@ -1,0 +1,38 @@
+{% extends "food/layout.html" %}
+{% block cover%}
+<div class="cover-img">
+    <div class="cover-content">
+        <h1 class="cover-title">Welcome to our Restaurants List</h1>
+        <h2 class="cover-subtitle">Enjoy our Delicious Meals</h2>
+    </div>
+</div>
+{%endblock%}
+{% block main %}
+
+<section class="about-us-section">
+    <h2 class="section-title ">About Us</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum aspernatur quaerat officiis ea optio
+        explicabo consequuntur nemo, ex repellendus quisquam nobis omnis unde quibusdam beatae incidunt maiores
+        necessitatibus corrupti iusto nulla cum modi. Accusantium deleniti cum magni facere veritatis, maxime atque!</p>
+    <hr>
+</section>
+
+
+
+<section class="menu-section">
+    <h2 class="section-title ">Our Restaurants</h2>
+    <div class="items-container">
+
+        {% for restaurant in restaurants %}
+        <div class="item">
+            <h3 class="item-title">{{restaurant.restaurant_name}}</h3>
+            <img src="{{restaurant.restaurant_image}}" width="300px" height="250px" alt="">
+            <p>{{restaurant.restaurant_location}}</p>
+            <a class="btn" href="{%url 'food:restaurant_details' restaurant.id %}">View Menu</a>
+        </div>
+
+        {%endfor%}
+    </div>
+</section>
+
+{% endblock %}
