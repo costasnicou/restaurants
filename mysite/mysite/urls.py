@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',food_views.index,name="index"),
     path('restaurant/',include("food.urls")),
+    path('restaurant/menu/<int:category_id>',food_views.menu_details,name="menu_details")
 ]

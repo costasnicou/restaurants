@@ -1,0 +1,35 @@
+{% extends "food/layout.html" %}
+{% block cover%}
+<div class="restaurant-cover">
+    <h1 class="menu-title">{{item_category.category_name}} Menu</h1>
+</div>
+{%endblock%}
+
+{% block main %}
+
+<section class="content ">
+    <div class="menu-content">
+
+        {% for menu_item in menu_items%}
+        <div class="menu-item">
+
+            <figure>
+                <img src="{{menu_item.item_image}}" alt="">
+            </figure>
+
+            <div class="menu-item-details">
+                <h2>{{menu_item.item_name}}</h2>
+                <p>{{menu_item.item_desc}}</p>
+                <p class="menu-item-price">€{{menu_item.item_price}}</p>
+            </div>
+
+            <!-- <p>{{menuitem.item_desc}}</p>
+            <p class="item-price">€{{menuitem.item_price}}</p>
+            <img src="{{menuitem.item_image}}" width="350px" height="200px" alt=""> -->
+
+        </div>
+        {%endfor%}
+    </div>
+    <a href="{% url 'index'%}">Back</a>
+</section>
+{% endblock %}

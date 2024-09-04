@@ -28,7 +28,8 @@ nav {
     text-align: center;
     /* border-top: 10px solid tomato;
     border-bottom: 10px solid tomato; */
-    background-color: rgb(243, 241, 241);
+    background-color: tomato;
+    /* background-color: rgb(109, 163, 225); */
     position: fixed;
     top: 0;
     width: 100%;
@@ -37,7 +38,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: tomato;
+    color: white;
     margin-top: 10px;
     font-size: 20px;
 }
@@ -45,9 +46,11 @@ nav a {
 .cover-img {
     background: linear-gradient(to bottom, rgba(30, 30, 30, 0.542), rgba(59, 58, 58, 0.87)),
         url(../imgs/cover.jpg);
+    background-image: url(../imgs/cover.jpg);
     /* background-image: url(../imgs/cover.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     height: 600px;
 }
 
@@ -91,7 +94,9 @@ hr {
 }
 
 .menu-section {
-    background-color: rgb(253, 253, 253);
+
+    background-color: rgb(148, 123, 123);
+    background-color: rgb(241, 241, 241);
 }
 
 .items-container {
@@ -104,9 +109,12 @@ hr {
 .section-title {
     text-align: center;
     color: tomato;
+    /* color: white; */
+
     /* padding: 20px; */
     font-size: 40px;
     font-weight: 300;
+    margin: 0 0 40px 0;
 }
 
 .item {
@@ -118,8 +126,12 @@ hr {
 
 }
 
+.item p {
+    /* color: white; */
+}
+
 .item-title {
-    color: tomato;
+    /* color: white; */
     font-weight: 300;
 }
 

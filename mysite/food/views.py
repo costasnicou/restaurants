@@ -22,11 +22,13 @@ def restaurant_details(request,restaurant_id):
     })
 
 
-# def list_menu(request,restaurant_id):
+def menu_details(request,category_id):
     
-#     restaurant = Restaurant.objects.get(pk=restaurant_id)
-#     menuitems = restaurant.foods.all()
-#     return render(request,"food/menu.html",{
-#         "restaurant":restaurant,
-#         "menuitems":menuitems
-#     })
+    item_category = ItemCategory.objects.get(pk=category_id)
+    menu_items = item_category.foods_by_category.all()
+
+    # menuitems = restaurant.foods.all()
+    return render(request,"food/menu_details.html",{
+        "item_category":item_category,
+        "menu_items":menu_items,
+    })

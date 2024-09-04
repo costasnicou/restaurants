@@ -7,7 +7,7 @@
 
 {% block main %}
 
-<section class="menu-content">
+<section class="content">
 
 
     <h2>Menu Categories</h2>
@@ -16,10 +16,10 @@
 
     <div class="categories-flex">
         {% for menu_category in menu_categories%}
-        <div class="menu-item">
+        <div class="category-item">
             <h3 class="menu-category-title">{{menu_category.category_name}}</h3>
             <img src="{{menu_category.category_image}}" alt="">
-            <a href="">View Menu</a>
+            <a href="{% url 'menu_details' menu_category.id %}">View Menu</a>
 
         </div>
         {%endfor%}
