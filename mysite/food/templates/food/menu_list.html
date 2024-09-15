@@ -1,0 +1,28 @@
+{% extends "food/layout.html" %}
+{% block main%}
+<section>
+    <div class="menu-items-layout">
+        <aside class="menu-items-categories">
+            <ul class="categories-list">
+                <h2>Menu Categories</h2>
+                {% for menu_category_item in menu_categories %}
+                <li><a
+                        href="{% url 'food:menu_list' restaurant.restaurant_slug menu_category_item.menu_slug %}">{{menu_category_item.menu_name}}</a>
+                </li>
+                {%endfor %}
+
+            </ul>
+        </aside>
+
+        <div class="menu-items-flex">
+            {% for menu_item in menu_items %}
+            <div class="menu-item">
+                <h3>{{menu_item.menu_item_name}}</h3>
+                <img src="{{menu_item.menu_item_image.url}}" width="200px" height="200px" alt="">
+                <p class="menu-item-price">Price: € {{menu_item.menu_item_price}}</p>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</section>
+{% endblock%}

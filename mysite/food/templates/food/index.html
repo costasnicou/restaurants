@@ -4,16 +4,20 @@
     <div class="cover-content">
         <h1 class="cover-title">Welcome to our Restaurants List</h1>
         <h2 class="cover-subtitle">Enjoy our Delicious Meals</h2>
+        <a href="{% url 'restaurant_list' %}" class="btn header-btn">View Restaurants</a>
     </div>
 </div>
 {%endblock%}
 {% block main %}
 
 <section class="about-us-section">
-    <h2 class="section-title ">About Us</h2>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum aspernatur quaerat officiis ea optio
-        explicabo consequuntur nemo, ex repellendus quisquam nobis omnis unde quibusdam beatae incidunt maiores
-        necessitatibus corrupti iusto nulla cum modi. Accusantium deleniti cum magni facere veritatis, maxime atque!</p>
+    <article class="about-us-article">
+        <h2 class="section-title ">About Us</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum aspernatur quaerat officiis ea optio
+            explicabo consequuntur nemo, ex repellendus quisquam nobis omnis unde quibusdam beatae incidunt maiores
+            necessitatibus corrupti iusto nulla cum modi. Accusantium deleniti cum magni facere veritatis, maxime atque!
+        </p>
+    </article>
     <hr>
 </section>
 
@@ -26,13 +30,14 @@
         {% for restaurant in restaurants %}
         <div class="item">
             <h3 class="item-title">{{restaurant.restaurant_name}}</h3>
-            <img src="{{restaurant.restaurant_image}}" width="300px" height="250px" alt="">
-            <p>{{restaurant.restaurant_location}}</p>
-            <a class="btn" href="{%url 'food:restaurant_details' restaurant.id %}">View Menu</a>
+            <img src="{{restaurant.restaurant_image.url}}" width="300px" height="250px" alt="">
+
+            <a class="btn" href="{%url 'food:restaurant_details' restaurant.restaurant_slug %}">View More</a>
         </div>
 
         {%endfor%}
     </div>
+    <a href="{% url 'restaurant_list' %}" class="view-all-restaurants">View All</a>
 </section>
 
 {% endblock %}

@@ -1,31 +1,95 @@
 {% extends "food/layout.html" %}
 {% block cover%}
 <div class="restaurant-cover">
-    <h1 class="menu-title">{{restaurant.restaurant_name}} Menu</h1>
+    <h1 class="menu-title">{{restaurant.restaurant_name}}</h1>
 </div>
 {%endblock%}
 
 {% block main %}
 
-<section class="content">
+<div class="content">
+
+    <section class="restaurant-content">
+
+        <article class="restaurant-about-us">
+            <div class="restaurant-about-us-content">
+                <h2>About Us</h2>
+                <p class="about-us-desc">{{restaurant.restaurant_about}}</p>
+            </div>
+
+            <div class="content-images">
+
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        {% for restaurant_img in restaurant_imgs %}
+                        <img src="{{restaurant_img.restaurant_image.url}}" alt="">
+
+                        {%endfor%}
+                    </div>
+                </div>
+
+                <button id="prevBtn">❮</button>
+                <button id="nextBtn">❯</button>
+
+                <!-- Modal for Zoomed Image -->
+                <div id="zoomModal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="zoomedImage">
+                </div>
+
+            </div>
+
+        </article>
 
 
-    <h2>Menu Categories</h2>
 
-    <!-- <h1>{{restaurant.restaurant_name}}</h1> -->
+    </section>
 
-    <div class="categories-flex">
-        {% for menu_category in menu_categories%}
-        <div class="category-item">
-            <h3 class="menu-category-title">{{menu_category.category_name}}</h3>
-            <img src="{{menu_category.category_image}}" alt="">
-            <a href="{% url 'menu_details' menu_category.id %}">View Menu</a>
+    <section class="menu-categories-section">
+        <h2 class="menu-category-color">Menu Categories</h2>
+        <div class="menu-categories-div">
 
+
+            {%for category in menu_categories %}
+            <div class="menu-category">
+                <h3 class="menu-category-color"> {{category.menu_name}}</h3>
+
+                <img src="{{category.menu_image.url}}" alt="">
+                <a href="{% url 'food:menu_list' restaurant.restaurant_slug  category.menu_slug %}" class="btn">View
+                    More</a>
+            </div>
+
+            {%endfor%}
         </div>
-        {%endfor%}
-    </div>
+    </section>
+
+    <section class="restaurant-content-aside">
+        <div class="restaurant-info">
+            <div class="location">
+                <h3 class="aside-title">Location</h3>
+                <p>{{restaurant.restaurant_location}}</p>
+
+            </div>
+
+            <div class="contact-info">
+                <h3 class="aside-title">Contact Info</h3>
+                <p><strong>Tel:</strong> {{restaurant.restaurant_phone}}</p>
+            </div>
+        </div>
+
+        <div class="social-media">
+            <h3 class="aside-title">Find Us On</h3>
+            {% for social_icon in social_icons %}
+            <a href="{{social_icon.link}}" target="_blank"><img src="{{social_icon.social_image.url}}" width="40px"
+                    height="40px" alt=""></a>
+            {% endfor %}
+        </div>
 
 
-    <a href="{% url 'index'%}">Back</a>
-</section>
+        </sec>
+
+
+
+        <a href="{% url 'index'%}" class="btn btn-home">Back</a>
+</div>
 {% endblock %}

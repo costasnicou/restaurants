@@ -1,0 +1,51 @@
+.menu-items-layout {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.menu-items-categories {
+    margin-top: 50px;
+    background-color: rgb(245, 245, 245);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.categories-list {
+    list-style: none;
+}
+
+.categories-list li {
+    padding: 10px;
+}
+
+.categories-list li a {
+    text-decoration: none;
+    color: rgb(15, 15, 118);
+    padding: 10px 20px;
+
+}
+
+.categories-list li a:hover {
+    background-color: #2980b9;
+    /* Hover Effect */
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.menu-items-flex {
+    width: 70%;
+    background-color: rgb(254, 254, 254);
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.menu-items-flex>* {
+    margin: 40px;
+}
+
+.menu-item-price {
+    font-size: 30px;
+    color: tomato;
+}

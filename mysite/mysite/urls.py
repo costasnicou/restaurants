@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import path,include
 from food import views as food_views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',food_views.index,name="index"),
+    path('list-restaurants',food_views.restaurant_list,name="restaurant_list"),
     path('restaurant/',include("food.urls")),
-    path('restaurant/menu/<int:category_id>',food_views.menu_details,name="menu_details")
-]
+]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
