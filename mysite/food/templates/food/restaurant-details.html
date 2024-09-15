@@ -11,6 +11,19 @@
 
     <section class="restaurant-content">
 
+        <div class="other-restaurants">
+            <h2>Featured Restaurants</h2>
+            {% for other_restaurant in feautured_restaurants %}
+            <div class="other-restaurant">
+                <p> {{other_restaurant.restaurant_name}}</p>
+                <img src="{{other_restaurant.restaurant_image.url}}" alt="">
+                <a class="btn" href="{%url 'food:restaurant_details' other_restaurant.restaurant_slug %}">View More</a>
+            </div>
+
+            {%endfor%}
+
+        </div>
+
         <article class="restaurant-about-us">
             <div class="restaurant-about-us-content">
                 <h2>About Us</h2>
@@ -86,10 +99,8 @@
         </div>
 
 
-        </sec>
+    </section>
 
-
-
-        <a href="{% url 'index'%}" class="btn btn-home">Back</a>
+    <a href="{% url 'index'%}" class="btn btn-home">Back</a>
 </div>
 {% endblock %}

@@ -1,10 +1,11 @@
 from django.contrib import admin
-from .models import Restaurant,MenuCategory,MenuItem,SocialMedia,RestaurantImg
+from .models import Restaurant,MenuCategory,MenuItem,SocialMedia,RestaurantImg,City
 # Register your models here.
 
 
 admin.site.register(SocialMedia)
 admin.site.register(RestaurantImg)
+admin.site.register(City)
 # admin.site.register(MenuCategory)
 # admin.site.register(MenuItem)
 # Inline for MenuCategory in RestaurantAdmin

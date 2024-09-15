@@ -1,4 +1,5 @@
 {% extends "food/layout.html" %}
+{% load static %}
 {% block cover%}
 <div class="cover-img">
     <div class="cover-content">
@@ -19,6 +20,7 @@
         </p>
     </article>
     <hr>
+    <img class="chef" src="{% static 'imgs/chef.png' %}" alt="">
 </section>
 
 

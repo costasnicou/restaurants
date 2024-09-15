@@ -2,6 +2,7 @@
 
 {% block main %}
 <section class="restaurants-list-section restaurants-padding">
+
     <div class="restaurant-by-city">
         <h2>Restaurant By City</h2>
 
@@ -13,21 +14,18 @@
     </div>
 
     <div class="restaurants-list">
-        {% for restaurant in restaurants%}
+        {% for filtered_restaurant in filtered_restaurants%}
         <div class="restaurant-item">
-            <h3 class="item-title">{{restaurant.restaurant_name}}</h3>
-            <img src="{{restaurant.restaurant_image.url}}" width="200px" height="200px" alt="">
+            <h3 class="item-title">{{filtered_restaurant.restaurant_name}}</h3>
+            <img src="{{filtered_restaurant.restaurant_image.url}}" width="200px" height="200px" alt="">
 
-            <a class="btn" href="{%url 'food:restaurant_details' restaurant.restaurant_slug %}">View More</a>
+            <a class="btn" href="{%url 'food:restaurant_details' filtered_restaurant.restaurant_slug %}">View
+                More</a>
         </div>
 
 
         {%endfor%}
     </div>
 
-
 </section>
-<div class="back-to-hp">
-    <a class="btn" href="{% url 'index' %}">Back to Homepage</a>
-</div>
 {% endblock %}

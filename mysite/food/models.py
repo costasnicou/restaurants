@@ -2,8 +2,22 @@ from django.db import models
 from django.utils.text import slugify
 # Create your models here.
 
+class City(models.Model):
+    city_name = models.CharField(max_length=100)
+    city_slug = models.SlugField(unique=True,blank=True)  # Add this field for slug-based lookups
+
+
+    def save(self, *args, **kwargs):
+        if not self.city_slug:
+            self.city_slug = slugify(self.city_name)
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.city_name
+
 # one restaurant has many categories
 class Restaurant(models.Model):
+    city = models.ForeignKey(City,on_delete=models.CASCADE,related_name="restaurant_by_city")
     restaurant_name = models.CharField(max_length=100)
     restaurant_image = models.ImageField(default='restaurant_default.jpg',upload_to='restaurant_images')
     restaurant_location = models.CharField(max_length=100)
