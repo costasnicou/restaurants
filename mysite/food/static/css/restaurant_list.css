@@ -36,3 +36,7 @@
 .back-to-hp {
     text-align: center;
 }
+
+.no-items {
+    padding: 10px 40px;
+}

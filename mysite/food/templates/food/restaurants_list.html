@@ -6,6 +6,7 @@
         <h2>Restaurant By City</h2>
 
         <ul class="categories-list">
+            <li><a href="{% url 'restaurant_list'%}">All Restaurants</a></li>
             {% for city in cities %}
             <li><a href="{% url 'food:restaurants_by_city' city.city_slug %}">{{city.city_name}}</a></li>
             {%endfor%}

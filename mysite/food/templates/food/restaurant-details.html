@@ -57,7 +57,7 @@
 
 
     </section>
-
+    {% if menu_categories %}
     <section class="menu-categories-section">
         <h2 class="menu-category-color">Menu Categories</h2>
         <div class="menu-categories-div">
@@ -75,7 +75,11 @@
             {%endfor%}
         </div>
     </section>
-
+    {% else %}
+    <section class="call-to-action">
+        <h2>Visit Us Now</h2>
+    </section>
+    {%endif%}
     <section class="restaurant-content-aside">
         <div class="restaurant-info">
             <div class="location">
@@ -90,6 +94,10 @@
             </div>
         </div>
 
+        <iframe id="map" src="https://www.google.com/maps/embed/v1/place?key={{ google_maps_api_key }}&q=Cyprus"
+            allowfullscreen>
+        </iframe>
+
         <div class="social-media">
             <h3 class="aside-title">Find Us On</h3>
             {% for social_icon in social_icons %}
@@ -101,6 +109,8 @@
 
     </section>
 
-    <a href="{% url 'index'%}" class="btn btn-home">Back</a>
+    <div class="back-to-hp">
+        <a class="btn" href="{% url 'index' %}">Back to Homepage</a>
+    </div>
 </div>
 {% endblock %}

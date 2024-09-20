@@ -128,3 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # base directory is the path of our current project
 MEDIA_ROOT= os.path.join(STATIC_URL,'pictures')
 MEDIA_URL='/pictures/'
+
+# google maps embed api key
+# AIzaSyCDQPDmTsqHlLzzFQM-FugRBB8fTDT2644

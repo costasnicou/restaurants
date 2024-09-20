@@ -22,13 +22,14 @@ def restaurant_details(request,restaurant_slug):
     restaurant_imgs = restaurant.restaurant_imgs.all()
     menu_categories = restaurant.menu_categories.all()
     social_icons = restaurant.social_icons.all()
-
+    google_maps_api_key = "AIzaSyCDQPDmTsqHlLzzFQM-FugRBB8fTDT2644" 
     return render(request,"food/restaurant-details.html",{
         "feautured_restaurants":restaurants,
         "restaurant_imgs": restaurant_imgs,
         "social_icons":social_icons,
         "restaurant":restaurant,
-        "menu_categories":menu_categories
+        "menu_categories":menu_categories,
+        'google_maps_api_key': google_maps_api_key,
     })
 
 
